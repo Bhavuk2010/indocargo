@@ -11,6 +11,15 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->post('/', function () use ($router) {
+    return 'hello  bhavuk';
 });
+
+
+$router->post('register_fo','Fleet_OperatorController@register_fleet_operator');
+
+//$router->post('register_driver','DriversController@register_driver');
+
+//$router->post('session','Fleet_OperatorController@showProfile');
+
+$router->post('login','LoginController@login');
