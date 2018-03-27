@@ -13,9 +13,8 @@ class CreateSessionsTable extends Migration
             $table->string('id');
            // $table->bigInteger('sid')->unsigned();
             //$table->foreign('sid')->references('id')->on('fleet_operator');
-            $table->string('email');
-            $table->string('username');
-            $table->string('password');
+            $table->string('user_id');
+            $table->string('session_id');
             $table->timestamps();
         });
     }

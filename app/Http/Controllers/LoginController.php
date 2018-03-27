@@ -37,12 +37,19 @@ public function login(Request $request)
        {
        $data = "logged in Successfully";
 
-       $Session_id = str_random(30);
+       $fieldsMapper = array(
+          'session_id' => hash_hmac('sha256', str_random(10), microtime()),
+          'user_id' => $userInstance->id,
+        );
+       $sessionInstance =  Session::create($fieldsMapper);
 
-               Session::create();
+       $responseString = array(
+          'profile' => $userInstance,
+          'session' => $sessionInstance,
+          ''=>$data
+        );
 
-       return response()->json($data);
-
+       return response()->json($responseString);
 
         }
 

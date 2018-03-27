@@ -10,9 +10,9 @@ class Session extends Model
 
    protected $table = 'sessions';
 
-    protected $fillable = [];
+    protected $hidden = [];
 
-   protected $gaurded = [];
+   protected $guarded = [];
 
 
 
